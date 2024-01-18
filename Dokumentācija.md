@@ -11,7 +11,7 @@ Projektā tiek izmantotas trīs Python bibliotēkas:
 Projekta kods sastāv no vairākām daļām:
 
 1. Klase GradeWindow: Šī klase definē logu, kurā lietotājs var ievadīt atzīmes. Tas satur vairākas metodes:
-    - __init__: Šī metode inicializē logu un izveido sākotnējos widgetus.
+    - init: Šī metode inicializē logu un izveido sākotnējos widgetus.
     - create_widgets: Šī metode izveido visus nepieciešamos widgetus, tostarp etiķetes priekšmetiem un darba veidiem, ievades laukumus atzīmēm un pogu atzīmju saglabāšanai.
     - save_grades: Šī metode tiek izsaukta, kad lietotājs nospiež pogu "Saglabāt atzīmes". Tā iegūst atzīmes no ievades laukumiem un saglabā tās vārdnīcā.
 
