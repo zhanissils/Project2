@@ -1,18 +1,22 @@
-Šis kods ir paredzēts skolēnu atzīmju ievadei un analīzei. Tas izmanto Python valodu un bibliotēkas pandas, matplotlib un tkinter. 
+Šis projekts ir izstrādāts, lai ļautu lietotājam ievadīt atzīmes, saglabāt tās Excel failā un izveidot grafiku ar vidējām atzīmēm. Tas ir noderīgs skolotājiem, lai viegli ievadītu un apstrādātu skolēnu atzīmes.
 
-Kods sākas ar nepieciešamo bibliotēku importēšanu. Tālāk tiek izveidota klase GradeWindow, kas ir paredzēta atzīmju ievades loga izveidei. Šī klase ir definēta ar dažādām metodēm:
+Projektā tiek izmantotas trīs Python bibliotēkas:
 
-- __init__: Šī metode inicializē logu un izveido sarakstus ar mācību priekšmetiem un darba veidiem, kā arī izveido tukšu vārdnīcu atzīmju glabāšanai.
-- create_widgets: Šī metode izveido logā nepieciešamos grafiskos elementus, piemēram, etiķetes ar priekšmetu nosaukumiem un darba veidiem, ievades laukus atzīmju ievadei un pogu atzīmju saglabāšanai.
-- save_grades: Šī metode saglabā ievadītās atzīmes vārdnīcā un aizver logu.
+1. pandas: Šī bibliotēka tiek izmantota datu apstrādei un saglabāšanai. Tā ļauj viegli manipulēt ar datiem un saglabāt tos dažādos formātos, tostarp Excel failos.
 
-Pēc klases GradeWindow definēšanas tiek izveidotas divas funkcijas:
+2. matplotlib.pyplot: Šī bibliotēka tiek izmantota grafiku zīmēšanai. Tā ļauj viegli izveidot dažāda veida grafikus, tostarp stabiņdiagrammas.
 
-- write_grades_to_excel: Šī funkcija saglabā atzīmes Excel failā. Atzīmes tiek saglabātas DataFrame formātā, kas tiek izveidots no atzīmju vārdnīcas. Pirms saglabāšanas atzīmes tiek reizinātas ar noteiktu koeficientu.
-- plot_average_grades: Šī funkcija izveido grafiku, kas attēlo vidējās atzīmes pēc priekšmetiem. Vidējās atzīmes tiek aprēķinātas DataFrame formātā, kas tiek izveidots no atzīmju vārdnīcas. Grafiks tiek saglabāts PNG formātā.
+3. tkinter: Šī bibliotēka tiek izmantota lietotāja saskarnes izveidei. Tā ļauj viegli izveidot logus, pogas, ievades laukumus un citus widgetus.
 
-Pēc tam tiek izveidots galvenais logs, izmantojot tkinter Tk klasi. Tiek izveidots GradeWindow klases objekts un tiek palaists notikumu apstrādes cikls, izmantojot mainloop metodi. 
+Projekta kods sastāv no vairākām daļām:
 
-Pēc loga aizvēršanas tiek iegūts atzīmju vārdnīcas objekts no GradeWindow klases objekta. Tad tiek definēts Excel faila nosaukums atzīmju saglabāšanai, koeficients, ar kuru tiek reizinātas atzīmes, un tiek saglabātas atzīmes Excel failā, izmantojot write_grades_to_excel funkciju.
+1. Klase GradeWindow: Šī klase definē logu, kurā lietotājs var ievadīt atzīmes. Tas satur vairākas metodes:
+    - __init__: Šī metode inicializē logu un izveido sākotnējos widgetus.
+    - create_widgets: Šī metode izveido visus nepieciešamos widgetus, tostarp etiķetes priekšmetiem un darba veidiem, ievades laukumus atzīmēm un pogu atzīmju saglabāšanai.
+    - save_grades: Šī metode tiek izsaukta, kad lietotājs nospiež pogu "Saglabāt atzīmes". Tā iegūst atzīmes no ievades laukumiem un saglabā tās vārdnīcā.
 
-Visbeidzot tiek definēts faila nosaukums grafika saglabāšanai un tiek izveidots grafiks, izmantojot plot_average_grades funkciju. Grafiks attēlo vidējās atzīmes pēc priekšmetiem.
+2. Funkcijas write_grades_to_excel un plot_average_grades: Šīs funkcijas tiek izmantotas, lai saglabātu atzīmes Excel failā un izveidotu grafiku ar vidējām atzīmēm.
+
+3. Galvenā programma: Galvenā programma izveido GradeWindow instanci, palaista Tkinter notikumu apstrādes ciklu, iegūst atzīmes no GradeWindow, saglabā atzīmes Excel failā un izveido grafiku ar vidējām atzīmēm. 
+
+Lietotājam ir jāpalaiž šis kods, lai parādītu logu, kurā var ievadīt atzīmes. Pēc atzīmju ievadīšanas un saglabāšanas, tās tiek saglabātas Excel failā, un tiek izveidots grafiks ar vidējām atzīmēm. Grafiks tiek saglabāts kā PNG attēls. Atzīmes un grafiks tiek saglabāti norādītajās atrašanās vietās failu sistēmā.
